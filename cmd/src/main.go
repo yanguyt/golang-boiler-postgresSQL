@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 
+	"cmd/src/main.go/lib/packagescontroller"
 	"cmd/src/main.go/lib/services"
 
 	"github.com/joho/godotenv"
@@ -13,5 +14,6 @@ func main() {
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
-	services.StartAllServices()
+	services := services.StartAllServices()
+	packagescontroller.StartPackagesController(services)
 }
