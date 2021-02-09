@@ -1,0 +1,12 @@
+version: '2'
+services:
+  postgresql:
+    image: 'bitnami/postgresql:latest'
+    environment:
+      - POSTGRESQL_USERNAME=user_teste
+      - POSTGRESQL_PASSWORD=0123456789
+      - POSTGRESQL_DATABASE=insta
+    ports:
+      - '5432:5432'
+    volumes:
+      - /Users/yanguyt/Documents/instaBot/:/bitnami/postgresql/conf/
